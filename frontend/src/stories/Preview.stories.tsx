@@ -24,6 +24,13 @@ const Template: Story = {
 export const Base: Story = {
   ...Template,
   args: {
+    selectedEntry: {},
+  },
+};
+
+export const CompleteInfo: Story = {
+  ...Template,
+  args: {
     selectedEntry: {
       id: "1",
       last_name: "Doe",
@@ -33,6 +40,18 @@ export const Base: Story = {
       driver_type: "Student",
       license_number: "123-123-123",
       license_expiration_date: "01/01/2030",
+    },
+  },
+};
+
+export const PartialInfo: Story = {
+  ...Template,
+  args: {
+    selectedEntry: {
+      id: "1",
+      last_name: "Doe",
+      first_name: "John",
+      license_number: "123-123-123",
     },
   },
 };

@@ -25,3 +25,24 @@ export const Base: Story = {
     violation: {},
   },
 };
+
+export const CompleteInfo: Story = {
+  ...Template,
+  args: {
+    violation: {
+      violation_type: "Illegal Parking",
+      description: "Parking in a no parking zone.",
+      violation_date: "11/11/2024",
+      paid_status: true,
+    },
+  },
+};
+
+export const PartialInfo: Story = {
+  ...Template,
+  args: {
+    violation: {
+      violation_type: "Illegal Parking",
+    },
+  },
+};

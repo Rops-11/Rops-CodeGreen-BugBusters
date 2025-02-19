@@ -91,7 +91,7 @@ const ViolationCard = ({ violation }: { violation: Violation }) => {
               />
             ) : (
               <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-lg text-md">
-                {violation.violation_type}
+                {violation.violation_type || "- N/A -"}
               </h1>
             )}
           </div>
@@ -110,7 +110,9 @@ const ViolationCard = ({ violation }: { violation: Violation }) => {
               />
             ) : (
               <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-lg text-md">
-                {year}/{month}/{day}
+                {violation.violation_date
+                  ? `${year}/${month}/${day}`
+                  : "- N/A -"}
               </h1>
             )}
           </div>
@@ -129,7 +131,7 @@ const ViolationCard = ({ violation }: { violation: Violation }) => {
               />
             ) : (
               <h1 className="text-textgreen font-syke lg:text-lg md:text-md text-sm lg:w-lg md:w-md w-sm break-normal">
-                {violation.description}
+                {violation.description || "- N/A -"}
               </h1>
             )}
           </div>
