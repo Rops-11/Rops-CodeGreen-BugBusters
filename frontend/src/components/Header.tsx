@@ -12,7 +12,7 @@ const Header = () => {
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth >= 768); // Track if the screen is wide
 
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const droopdownRefPolicies = useRef<HTMLDivElement>(null);
+  const dropdownRefPolicies = useRef<HTMLDivElement>(null);
 
   const { logout } = useLogout();
   const { auth }: AuthContextType = useAuth();
@@ -74,8 +74,8 @@ const Header = () => {
         setDropdownOpen(false);
       }
       if (
-        droopdownRefPolicies.current &&
-        !droopdownRefPolicies.current.contains(event.target as Node)
+        dropdownRefPolicies.current &&
+        !dropdownRefPolicies.current.contains(event.target as Node)
       ) {
         setDropdownOpenPolicies(false);
       }
@@ -115,7 +115,7 @@ const Header = () => {
 
             <div
               className="relative"
-              ref={droopdownRefPolicies}>
+              ref={dropdownRefPolicies}>
               <button
                 onClick={toggleDropdownPolicies}
                 className="hover:text-textgreen transition-colors z-50">
