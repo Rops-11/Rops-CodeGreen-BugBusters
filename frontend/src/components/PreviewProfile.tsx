@@ -30,7 +30,7 @@ const PreviewProfile = ({
               Last Name
             </h1>
             <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-              {selectedEntry.last_name || ""}
+              {selectedEntry.last_name || "- N/A -"}
             </h1>
           </div>
           <div className="flex-1">
@@ -38,7 +38,7 @@ const PreviewProfile = ({
               First Name
             </h1>
             <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-              {selectedEntry.first_name || ""}
+              {selectedEntry.first_name || "- N/A -"}
             </h1>
           </div>
         </div>
@@ -49,7 +49,7 @@ const PreviewProfile = ({
               Sex
             </h1>
             <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-              {selectedEntry.sex || ""}
+              {selectedEntry.sex || "- N/A -"}
             </h1>
           </div>
           <div className="flex-2 w-5/12">
@@ -65,7 +65,7 @@ const PreviewProfile = ({
               Driver Type
             </h1>
             <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-              {selectedEntry.driver_type || ""}
+              {selectedEntry.driver_type || "- N/A -"}
             </h1>
           </div>
         </div>
@@ -77,7 +77,7 @@ const PreviewProfile = ({
                 License Number
               </h1>
               <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-                {selectedEntry.license_number || ""}
+                {selectedEntry.license_number || "- N/A -"}
               </h1>
             </div>
             <div className="flex-1">
@@ -85,7 +85,7 @@ const PreviewProfile = ({
                 License Expiration Date
               </h1>
               <h1 className="text-textgreen font-syke-medium lg:text-xl md:text-xs sm:text-lg xs:text-sm text-xs">
-                {selectedEntry.license_expiration_date || ""}
+                {selectedEntry.license_expiration_date || "- N/A -"}
               </h1>
             </div>
           </div>
