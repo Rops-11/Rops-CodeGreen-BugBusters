@@ -11,7 +11,11 @@ declare global {
        * Custom command to log in a user.
        * @example cy.login('test@example.com', 'password123')
        */
-      login(email: string, password: string): Chainable<void>; // Or Chainable<Element> if it yields something specific
+      login(email: string, password: string): Chainable<void>;
+
+      logout(): Chainable<void>;
+
+      // Or Chainable<Element> if it yields something specific
       // You can remove drag, dismiss, and the visit overwrite if you're not using them right now
       // drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       // dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
@@ -28,9 +32,15 @@ Cypress.Commands.add("login", (email, password) => {
   cy.get("#password").clear().type(password);
   cy.get('[data-testid="login-button"]').click();
 
-  cy.get(".Toastify__toast-body").contains("Logged In Successfully!");
+  cy.get(".Toastify__toast-body").contains("Logged In Successfully!").click();
   cy.url().should("include", "admin");
   cy.contains("Welcome,");
+});
+
+Cypress.Commands.add("logout", () => {
+  cy.contains("Account").click();
+  cy.contains("Log Out").click();
+  cy.url().should("include", "login");
 });
 
 // -- This is a parent command --
