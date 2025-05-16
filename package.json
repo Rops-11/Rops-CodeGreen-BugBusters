@@ -10,6 +10,7 @@
     "frontend": "cd frontend && npm run dev",
     "allinstall": "npm install && cd frontend && npm install && cd ../backend && npm install",
     "allupdate": "npm update && cd frontend && npm update && cd ../backend && npm update",
+    "storybook": "cd frontend && npm run storybook cd ..",
     "prettier-format": "prettier --config .prettierrc frontend/src/**/*.ts --write && prettier --config .prettierrc backend/src/**/*.ts --write"
   },
   "keywords": [],
