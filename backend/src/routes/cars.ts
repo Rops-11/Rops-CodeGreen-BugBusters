@@ -4,6 +4,7 @@ import { Cars } from "../types/datatypes";
 
 const router = express();
 
+
 router.post("/check-license", async (req: Request, res: Response) => {
   try {
     const { license_number } = req.body;

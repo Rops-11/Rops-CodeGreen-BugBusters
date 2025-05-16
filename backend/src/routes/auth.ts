@@ -91,6 +91,7 @@ router.post("/login", validateAuth, async (req: Request, res: Response) => {
     });
     res.status(200).json({ accessToken, isAdmin: user.is_admin, id: user.id });
   } catch (error) {
+    console.error(error);
     const errorMessage = (error as Error).message;
     res.status(500).json({ title: "Unknown Error", message: errorMessage });
   }
