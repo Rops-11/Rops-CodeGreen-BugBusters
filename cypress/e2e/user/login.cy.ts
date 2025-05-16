@@ -1,10 +1,8 @@
 /// <reference types="cypress" />
 
 describe("login", () => {
-  // Define test data for a normal user
-  // ** IMPORTANT: Replace with actual normal user credentials for testing **
-  const normalUserEmail = "thereal.ugly11@gmail.com"; // Updated email
-  const normalUserPassword = "123123123123"; // Updated password
+  const normalUserEmail = "thereal.ugly11@gmail.com";
+  const normalUserPassword = "123123123123";
 
   describe("normal user", () => {
     beforeEach(() => {
