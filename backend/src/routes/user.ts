@@ -88,10 +88,10 @@ router.patch("/change-password", async (req: Request, res: Response) => {
     const salt = (await bcrypt.genSalt(11)) as string;
     const hashedNewPassword = await bcrypt.hash(newPassword, salt);
 
-    await pool.query("UPDATE users SET password = $1, salt = $2", [
-      hashedNewPassword,
-      salt,
-    ]);
+    await pool.query(
+      "UPDATE users SET password = $2, salt = $3 WHERE id = $1;",
+      [userId, hashedNewPassword, salt],
+    );
 
     res.status(200).json({
       title: "Password Changed",
