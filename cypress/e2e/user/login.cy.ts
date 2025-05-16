@@ -21,16 +21,21 @@ describe("login", () => {
       cy.url().should("include", "/homepage");
 
       cy.contains("About").click().wait(3000);
+      cy.url().should("include", "/about");
 
       cy.contains("Policies").click().wait(2000);
       cy.contains("Protocol").click().wait(2000);
+      cy.url().should("include", "/protocol");
+
       cy.contains("Policies").click().wait(2000);
+
       cy.contains("Rules and Regulations").click().wait(2000);
+      cy.url().should("include", "/rules");
 
       cy.contains("Account").click();
       cy.contains("Log Out").click();
 
-        cy.url().should("include", "/login");
+      cy.url().should("include", "/login");
     });
   });
 });

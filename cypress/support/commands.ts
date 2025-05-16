@@ -28,7 +28,7 @@ Cypress.Commands.add("login", (email, password) => {
   cy.visit("/login");
   cy.get(".bg-login-bg").should("be.visible");
 
-  cy.get("#email").clear().type(email);
+  cy.get("#email").type(email);
   cy.get("#password").clear().type(password);
   cy.get('[data-testid="login-button"]').click();
 
