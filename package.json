@@ -11,7 +11,8 @@
     "allinstall": "npm install && cd frontend && npm install && cd ../backend && npm install",
     "allupdate": "npm update && cd frontend && npm update && cd ../backend && npm update",
     "storybook": "cd frontend && npm run storybook cd ..",
-    "prettier-format": "prettier --config .prettierrc frontend/src/**/*.ts --write && prettier --config .prettierrc backend/src/**/*.ts --write"
+    "prettier-format": "prettier --config .prettierrc frontend/src/**/*.ts --write && prettier --config .prettierrc backend/src/**/*.ts --write",
+    "cypress": "cypress open"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.16.0",
+    "@types/mocha": "^10.0.10",
+    "cypress": "^14.3.3",
     "eslint": "^9.16.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

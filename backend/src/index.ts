@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { Pool, neonConfig } from "@neondatabase/serverless";
@@ -46,6 +46,10 @@ server.use(cookieParser());
 neonConfig.webSocketConstructor = ws;
 export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
+server.get("/test", async (req: Request, res: Response) => {
+  res.status(200).send("Hello");
+});
+
 // Routes
 server.use("/auth", authRoutes);
 // APIs for Functionality (Must Be Placed Under Verification of Auth)
@@ -62,7 +66,7 @@ server.use("/violator", violatorRoutes);
 // For PORT
 const PORT = Number(process.env.PORT) || 3000;
 
-server.listen(PORT, "0.0.0.0", () => {
+server.listen(PORT, "::", () => {
   console.log(
     `The Server for CodeGreen has Started at http://localhost:${PORT}`,
   );
